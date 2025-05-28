@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: serif;
+        }
+
+        .container6 {
+            display: flex;
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .faq-section {
+            flex: 1;
+        }
+
+        .contact-section {
+            flex: 0 0 400px;
+        }
+
+        .section-title {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .main-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .accordion {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-header {
+            font-size: 24px;
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: normal;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .accordion-content.active {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.active {
+            transform: rotate(180deg);
+        }
+
+        .contact-section {
+            text-align: right;
+        }
+
+        .contact-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .contact-address {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .contact-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            position: absolute;
+            color: white;
+            font-size: 48px;
+            bottom: 100px;
+            right: 60px;
+        }
+
+        .brand-subtitle {
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            bottom: 80px;
+            right: 60px;
+        }
+
+        .image-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container6">
+        <div class="faq-section">
+            <h3 class="section-title">ORDER RELATED QUERIES</h3>
+            <h1 class="main-title">Orders & Returns</h1>
+            
+            <div class="accordion">
+                <div class="accordion-header">
+                    When will my order be delivered?
+                    <span class="arrow">⌃</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Dolor sit amet consectetur adipisicing. Elit duis tristique sollicitudin nibh sit amet. Ultrices eros in cursus turpis. Ultricies tristique nulla aliquet enim tortor at auctor urna nunc.Volutpat diam ut venenatis tellus. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    How to check status of my order?
+                    <span class="arrow">⌃</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Track your order through our online tracking system using your order number and email address.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    If an item is missing from my order, what should I do?
+                    <span class="arrow">⌃</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Contact our customer service team immediately with your order number and details of the missing item.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    If I'm not available to pick up my order, what should I do?
+                    <span class="arrow">⌃</span>
+                </div>
+                <div class="accordion-content">
+                    <p>You can either reschedule the delivery or nominate someone else to receive it on your behalf.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2 class="contact-title">Contact Us</h2>
+            <p class="contact-address">123 St, East park street, Los Angels, Maze City, London.</p>
+            <p class="contact-info">+000 123 456 789 | contact@example.com</p>
+            <div class="image-container">
+                <img src="/api/placeholder/400/500" alt="RAYE" class="contact-image">
+                <h2 class="brand-name">RAYE</h2>
+                <p class="brand-subtitle">SUMMER & FALL DRESSES</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+                
+                // Close all other accordion items
+                document.querySelectorAll('.accordion-content').forEach(content => {
+                    if (content !== accordionContent) {
+                        content.classList.remove('active');
+                        content.previousElementSibling.querySelector('.arrow').classList.remove('active');
+                    }
+                });
+
+                // Toggle current accordion item
+                accordionContent.classList.toggle('active');
+                arrow.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
