@@ -159,7 +159,7 @@ p {
 }
 
 .navbar.scrolled {
-    background-color: rgba(17, 17, 17, 0.95);
+    background-color: black;
     padding: 1rem 5%;
     backdrop-filter: blur(8px);
 }
@@ -167,7 +167,7 @@ p {
 /* Logo styling */
 .logos {
     font-size: 2rem;
-    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
@@ -744,6 +744,7 @@ p {
 
 /* Services Section - Enhanced with left sidebar navigation and animations */
 .fitness-section {
+    margin-top: 60px;
     position: relative;
     overflow: visible;
     padding: 0;
@@ -780,7 +781,7 @@ p {
     top: 130px;
     height: var(--cardHeight);
     z-index: var(--index);
-    margin-bottom: calc(var(--cardHeight) * 0.2);
+   
 }
 
 .card-body {
@@ -2328,10 +2329,7 @@ p {
     transform: scale(1);
 }
 
-/* Add spacing between sections */
-.fitness-section + section {
-    margin-top: calc(var(--cardHeight) * 0.1);
-}
+
 
 /* Add hover effect for better interaction */
 .card:hover .content-container {
@@ -2360,4 +2358,5 @@ p {
 /* Ensure proper stacking context */
 .fitness-section {
     isolation: isolate;
+    margin-top: 60px;
 }
